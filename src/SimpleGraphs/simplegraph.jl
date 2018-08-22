@@ -50,6 +50,8 @@ end
 # SimpleGraph(adjmx)
 SimpleGraph(adjmx::AbstractMatrix) = SimpleGraph{Int}(adjmx)
 
+SimpleGraph(g::SimpleGraph) = copy(g)
+
 # SimpleGraph(digraph)
 function SimpleGraph(g::SimpleDiGraph)
     gnv = nv(g)
